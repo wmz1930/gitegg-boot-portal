@@ -60,3 +60,10 @@ export function checkDfsExist (data) {
     params: data
   })
 }
+
+export function queryDefaultDfs () {
+  return request({
+    url: '/extension/dfs/query/default',
+    method: 'get'
+  })
+}

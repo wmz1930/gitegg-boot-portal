@@ -53,3 +53,29 @@ export function checkSmsTemplateExist (data) {
     params: data
   })
 }
+
+export function downloadSmsTemplateList (query) {
+  return request({
+    url: '/extension/sms/template/download',
+    method: 'get',
+    responseType: 'blob',
+    params: query
+  })
+}
+
+export function uploadSmsTemplate (formData) {
+  return request({
+    url: '/extension/sms/template/upload',
+    method: 'post',
+    data: formData
+  })
+}
+
+export function downloadSmsTemplateTemplate (query) {
+  return request({
+    url: '/extension/sms/template/download/template',
+    method: 'get',
+    responseType: 'blob',
+    params: query
+  })
+}

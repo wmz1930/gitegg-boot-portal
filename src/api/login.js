@@ -6,13 +6,26 @@ const userApi = {
   CaptchaType: '/oauth/captcha/type',
   ImageCaptcha: '/oauth/captcha/image',
   ForgePassword: '/auth/forge-password',
-  Register: '/auth/register',
   twoStepCode: '/auth/2step-code',
   SendSms: '/oauth/sms/captcha/send',
   SendSmsErr: '/account/sms_err',
   // get my info
-  UserInfo: '/system/auth/user/info',
-  UserMenu: '/user/nav'
+  UserInfo: '/system/account/user/info',
+  UserMenu: '/user/nav',
+  // Social login
+  SocialLoginUrl: '/oauth/social/login/',
+  SocialLoginCallback: '/oauth/social/',
+  // Social bind
+  SocialBindMobile: '/oauth/social/bind/mobile',
+  SocialBindAccount: '/oauth/social/bind/account',
+  // sms
+  SmsSend: '/extension/sms/code/send',
+  SmsCheckPre: '/extension/sms/check/code/pre',
+  SmsCheck: '/extension/sms/check/code',
+  // account
+  SmsRegisterSend: '/system/account/register/sms/send',
+  Register: '/system/account/register',
+  CheckUserExist: '/system/account/register/check'
 }
 
 export default userApi
@@ -91,6 +104,77 @@ export function getCurrentUserNav () {
 export function get2step (parameter) {
   return request({
     url: userApi.twoStepCode,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function getSocialLoginUrl (socialType) {
+  return request({
+    url: userApi.SocialLoginUrl + socialType,
+    method: 'get'
+  })
+}
+
+export function socialLoginCallback (socialType, parameter) {
+  return request({
+    url: userApi.SocialLoginCallback + socialType + '/callback',
+    method: 'get',
+    params: parameter
+  })
+}
+
+export function sendSmsCode (parameter) {
+  return request({
+    url: userApi.SmsSend,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function checkSmsCode (parameter) {
+  return request({
+    url: userApi.SmsCheckPre,
+    method: 'get',
+    params: parameter
+  })
+}
+
+export function smsRegisterSend (parameter) {
+  return request({
+    url: userApi.SmsRegisterSend,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function checkUserExist (parameter) {
+  return request({
+    url: userApi.CheckUserExist,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function userRegister (parameter) {
+  return request({
+    url: userApi.Register,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function userBindMobile (parameter) {
+  return request({
+    url: userApi.SocialBindMobile,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function userBindAccount (parameter) {
+  return request({
+    url: userApi.SocialBindAccount,
     method: 'post',
     data: parameter
   })

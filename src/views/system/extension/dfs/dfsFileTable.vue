@@ -109,8 +109,8 @@
         <a-form-model-item label="主键" prop="id">
           <a-input v-model="dfsFileForm.id" placeholder="输入主键" :maxLength="32" />
         </a-form-model-item>
-        <a-form-model-item label="分布式存储配置" prop="dfsId">
-          <a-input v-model="dfsFileForm.dfsId" placeholder="输入分布式存储配置" :maxLength="32" />
+        <a-form-model-item label="分布式存储配置id" prop="dfsId">
+          <a-input v-model="dfsFileForm.dfsId" placeholder="输入分布式存储配置id" :maxLength="32" />
         </a-form-model-item>
         <a-form-model-item label="文件访问地址" prop="accessUrl">
           <a-input v-model="dfsFileForm.accessUrl" placeholder="输入文件访问地址" :maxLength="32" />

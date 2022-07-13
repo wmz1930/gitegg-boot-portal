@@ -22,7 +22,6 @@ export default {
     socialCallback (socialType, parameter) {
       const that = this
       socialLoginCallback(socialType, parameter).then(res => {
-        debugger
         that.$loading.hide()
         const bindResult = res.data
         if (bindResult && bindResult !== '') {
@@ -70,7 +69,13 @@ export default {
         .then((res) => this.loginSuccess(res))
         .catch(err => this.loginError(err))
         .finally(() => {
-
+           this.$loading.hide()
+           if (this.getUrlKey('redirect')) {
+              window.opener.location.href = window.opener.location.origin + this.getUrlKey('redirect')
+           } else {
+              window.opener.location.reload()
+           }
+           window.close()
        })
     },
     loginSuccess (res) {
@@ -79,13 +84,6 @@ export default {
          description: '第三方登录成功',
          duration: 4
       })
-      this.$loading.hide()
-      if (this.getUrlKey('redirect')) {
-        window.opener.location.href = window.opener.location.origin + this.getUrlKey('redirect')
-      } else {
-        window.opener.location.reload()
-      }
-      window.close()
     },
     loginError (err) {
       this.$notification['error']({

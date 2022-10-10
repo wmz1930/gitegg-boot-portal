@@ -122,7 +122,7 @@ export default {
         return this.$t(text)
       } else {
         // 兼容不存在的语言
-        const i18n = this.$options.i18n.messages[this.locale] || this.$options.i18n.messages['en-US']
+        const i18n = this.$options.i18n.messages[this.locale] || this.$options.i18n.messages['zh-CN']
         return i18n[text]
       }
     },

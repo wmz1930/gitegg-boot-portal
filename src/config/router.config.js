@@ -21,7 +21,6 @@ export const asyncRouterMap = [
         name: 'dashboard',
         redirect: '/dashboard/analysis',
         component: RouteView,
-        hidden: true,
         meta: { title: 'menu.dashboard', keepAlive: true, icon: bxAnaalyse, permission: ['dashboard'] },
         children: [
           {

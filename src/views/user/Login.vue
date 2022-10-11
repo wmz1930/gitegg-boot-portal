@@ -977,5 +977,5 @@ export default {
 
   /deep/ .verify-bar-area .verify-msg {
     color: #40a9ff;
-}
+  }
 </style>

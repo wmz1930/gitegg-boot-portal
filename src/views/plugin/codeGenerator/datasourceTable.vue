@@ -301,8 +301,8 @@
                 loadData: parameter => {
                     return queryDatasourceList(Object.assign(parameter, this.listQuery))
                         .then(res => {
-                            this.list = res.data
-                            return res
+                            this.list = res.data.records
+                            return res.data
                         })
                 }
             }
@@ -362,8 +362,8 @@
             getList () {
                 this.listLoading = true
                 queryDatasourceList(this.listQuery).then(response => {
-                    this.list = response.data
-                    this.total = response.count
+                    this.list = response.data.records
+                    this.total = response.data.records.count
                     this.listLoading = false
                 })
             },

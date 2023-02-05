@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchDictBusinessList (data) {
   return request({
-    url: '/extension/base/business/dict/list',
+    url: '/base/business/dict/list',
     method: 'get',
     params: data
   })
@@ -10,7 +10,7 @@ export function fetchDictBusinessList (data) {
 
 export function queryDictBusinessList (data) {
   return request({
-    url: '/extension/base/business/dict/list/all',
+    url: '/base/business/dict/list/all',
     method: 'get',
     params: data
   })
@@ -18,7 +18,7 @@ export function queryDictBusinessList (data) {
 
 export function createDictBusiness (data) {
   return request({
-    url: '/extension/base/business/dict/create',
+    url: '/base/business/dict/create',
     method: 'post',
     data
   })
@@ -26,7 +26,7 @@ export function createDictBusiness (data) {
 
 export function updateDictBusiness (data) {
   return request({
-    url: '/extension/base/business/dict/update',
+    url: '/base/business/dict/update',
     method: 'post',
     data
   })
@@ -34,21 +34,21 @@ export function updateDictBusiness (data) {
 
 export function updateDictBusinessStatus (dictBusinessId, dictBusinessStatus) {
   return request({
-    url: '/extension/base/business/dict/status/' + dictBusinessId + '/' + dictBusinessStatus,
+    url: '/base/business/dict/status/' + dictBusinessId + '/' + dictBusinessStatus,
     method: 'post'
   })
 }
 
 export function deleteDictBusiness (id) {
   return request({
-    url: '/extension/base/business/dict/delete/' + id,
+    url: '/base/business/dict/delete/' + id,
     method: 'post'
   })
 }
 
 export function batchDeleteDictBusiness (data) {
   return request({
-    url: '/extension/base/business/dict/batch/delete',
+    url: '/base/business/dict/batch/delete',
     method: 'post',
     data
   })
@@ -56,14 +56,14 @@ export function batchDeleteDictBusiness (data) {
 
 export function listDictBusiness (dictBusinessCode) {
   return request({
-    url: '/extension/base/business/dict/query/' + dictBusinessCode,
+    url: '/base/business/dict/query/' + dictBusinessCode,
     method: 'post'
   })
 }
 
 export function batchListDictBusiness (data) {
   return request({
-    url: '/extension/base/business/dict/batch/query',
+    url: '/base/business/dict/batch/query',
     method: 'post',
     data
   })
@@ -71,8 +71,8 @@ export function batchListDictBusiness (data) {
 
 export function checkDictBusinessExist (data) {
   return request({
-    url: '/extension/base/business/dict/check',
+    url: '/base/business/dict/check',
     method: 'post',
-    params: data
+    data
   })
 }

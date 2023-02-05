@@ -43,7 +43,7 @@ export function checkJustAuthSocialExist (data) {
   return request({
     url: '/extension/justauth/social/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

@@ -50,7 +50,7 @@ export function checkJustAuthSourceExist (data) {
   return request({
     url: '/extension/justauth/source/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

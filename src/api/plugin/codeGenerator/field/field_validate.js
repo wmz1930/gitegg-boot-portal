@@ -50,6 +50,6 @@ export function checkFieldValidateExist (data) {
   return request({
     url: '/code/generator/field/validate/check',
     method: 'post',
-    params: data
+    data
   })
 }

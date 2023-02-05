@@ -50,7 +50,7 @@ export function checkDataPermissionRoleExist (data) {
   return request({
     url: '/system/data/permission/role/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

@@ -50,7 +50,7 @@ export function checkMailChannelExist (data) {
   return request({
     url: '/extension/mail/channel/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

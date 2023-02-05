@@ -58,7 +58,7 @@ export function checkMailTemplateExist (data) {
   return request({
     url: '/extension/mail/template/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

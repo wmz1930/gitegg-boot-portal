@@ -3,6 +3,7 @@
     <a-form :form="form" style="max-width: 500px; margin: 40px auto 0;">
       <a-form-item
         label="手机号"
+        prop="phoneNumber"
         :labelCol="labelCol"
         :wrapperCol="wrapperCol"
       >
@@ -26,6 +27,7 @@
       </a-form-item>
       <a-form-item v-if="loginCaptchaType === 'image'"
                    label="图片验证码"
+                   prop="captchaCodeSms"
                    :labelCol="labelCol"
                    :wrapperCol="wrapperCol"
       >
@@ -50,6 +52,7 @@
       </a-form-item>
       <a-form-item
         label="短信验证码"
+        prop="captcha"
         :labelCol="labelCol"
         :wrapperCol="wrapperCol"
       >

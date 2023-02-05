@@ -65,6 +65,6 @@ export function checkRoleExist (data) {
   return request({
     url: '/system/role/check',
     method: 'post',
-    params: data
+    data
   })
 }

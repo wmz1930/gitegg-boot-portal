@@ -50,6 +50,6 @@ export function checkDfsFileExist (data) {
   return request({
     url: '/extension/dfs/file/check',
     method: 'post',
-    params: data
+    data
   })
 }

@@ -50,6 +50,6 @@ export function checkTenantExist (data) {
   return request({
     url: '/extension/base/tenant/check',
     method: 'post',
-    params: data
+    data
   })
 }

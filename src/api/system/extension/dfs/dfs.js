@@ -57,7 +57,7 @@ export function checkDfsExist (data) {
   return request({
     url: '/extension/dfs/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

@@ -50,7 +50,7 @@ export function checkSmsTemplateExist (data) {
   return request({
     url: '/extension/sms/template/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

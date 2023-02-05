@@ -58,7 +58,7 @@ export function checkConfigExist (data) {
   return request({
     url: '/code/generator/config/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

@@ -104,9 +104,17 @@ export default {
     },
     submitUpdatePwd () {
       smsChangePassword(this.formUpdatePwd).then(res => {
-        this.$refs.RecoverPassword.releaseLoading()
-        this.$refs.RecoverSuccess.successChangePassword(this.formUpdatePwd)
-        this.nextStep()
+        if (res.success) {
+          this.$refs.RecoverPassword.releaseLoading()
+          this.$refs.RecoverSuccess.successChangePassword(this.formUpdatePwd)
+          this.nextStep()
+        } else {
+          this.$notification['error']({
+            message: '错误',
+            description: res.msg || '请求出现错误，请稍后再试',
+            duration: 4
+          })
+        }
       }).catch(err => {
         this.$refs.RecoverPassword.releaseLoading()
         this.requestFailed(err)

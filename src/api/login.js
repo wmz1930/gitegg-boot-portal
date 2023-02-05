@@ -25,7 +25,7 @@ const userApi = {
   // account
   SmsRegisterSend: '/system/account/register/sms/send',
   Register: '/system/account/register',
-  CheckUserExist: '/system/account/register/check'
+  CheckUserExist: '/system/account/register/check',
   // change password
   PwdSmsSend: '/system/account/pwd/sms/send',
   SmsChangePassword: '/system/account/pwd/update'
@@ -151,11 +151,11 @@ export function smsRegisterSend (parameter) {
   })
 }
 
-export function checkUserExist (parameter) {
+export function checkUserExist (data) {
   return request({
     url: userApi.CheckUserExist,
     method: 'post',
-    data: parameter
+    data
   })
 }
 
@@ -183,7 +183,7 @@ export function userBindAccount (parameter) {
   })
 }
 
-// ·¢ËÍÐÞ¸ÄÃÜÂë¶ÌÐÅ
+// ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 export function smsPwdSend (parameter) {
   return request({
     url: userApi.PwdSmsSend,
@@ -192,7 +192,7 @@ export function smsPwdSend (parameter) {
   })
 }
 
-// Ö´ÐÐÐÞ¸ÄÃÜÂë²Ù×÷
+// Ö´ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 export function smsChangePassword (parameter) {
   return request({
     url: userApi.SmsChangePassword,

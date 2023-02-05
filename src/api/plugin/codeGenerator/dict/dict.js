@@ -73,6 +73,6 @@ export function checkGeneratorDictExist (data) {
   return request({
     url: '/code/generator/dict/check',
     method: 'post',
-    params: data
+    data
   })
 }

@@ -43,7 +43,7 @@ export function checkMailLogExist (data) {
   return request({
     url: '/extension/mail/log/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

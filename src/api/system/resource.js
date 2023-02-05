@@ -42,6 +42,6 @@ export function checkResourceExist (data) {
   return request({
     url: '/system/resource/check',
     method: 'post',
-    params: data
+    data
   })
 }

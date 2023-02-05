@@ -50,7 +50,7 @@ export function checkDatasourceExist (data) {
   return request({
     url: '/code/generator/datasource/check',
     method: 'post',
-    params: data
+    data
   })
 }
 

@@ -126,9 +126,9 @@
         :wrapper-col="mailLogWrapperCol">
         <a-row>
           <a-col :md="24" :sm="24">
-            <a-form-model-item label="邮件渠道" prop="channelId">
+            <a-form-model-item label="邮件渠道" prop="channelName">
               <a-input
-                v-model.trim="mailLogForm.channelId"
+                v-model.trim="mailLogForm.channelName"
                 placeholder="请输入邮件渠道"
                 :max-length="19" />
             </a-form-model-item>
@@ -306,7 +306,7 @@
                         align: 'center',
                         width: 200,
                         ellipsis: true,
-                        dataIndex: 'channelId'
+                        dataIndex: 'channelName'
                     },
                     {
                         title: '邮件主题',

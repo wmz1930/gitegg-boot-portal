@@ -30,7 +30,7 @@ export default {
 /deep/ .ant-pro-basicLayout-content {
     margin: 5px!important;
 }
-// /deep/ .ant-card-body {
-//     padding: 5px!important;
-// }
+/deep/ .ant-card-body {
+    padding: 5px!important;
+}
 </style>

@@ -143,6 +143,7 @@
                   :loading="state.loginBtn"
                   :disabled="state.loginBtn">{{ $t('user.login.login') }}</a-button>
       </a-form-item>
+
       <div class="user-login-other">
         <span>{{ $t('user.login.sign-in-with') }}</span>
         <a @click="openSocialLogin('wechat_open')">
@@ -501,7 +502,7 @@ export default {
                 })
               } else {
                 this.isPhoneLoginError = true
-                this.loginPhoneErrorMsg = res.data.message
+                this.loginPhoneErrorMsg = res.data.msg
                 state.time = 60
                 state.smsSendBtn = false
                 window.clearInterval(interval)

@@ -362,8 +362,8 @@
             getList () {
                 this.listLoading = true
                 queryDatasourceList(this.listQuery).then(response => {
-                    this.list = response.data.records
-                    this.total = response.data.records.count
+                    this.list = response.data
+                    this.total = response.count
                     this.listLoading = false
                 })
             },

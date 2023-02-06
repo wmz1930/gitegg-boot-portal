@@ -18,7 +18,7 @@
           <a-input
             :style="{width: 'calc(100% - 80px)'}"
             :placeholder="$t('user.login.mobile.placeholder')"
-            v-decorator="['phoneNumber', {rules: [{ required: true, pattern: /^1[34578]\d{9}$/, message: $t('user.phone-number.required') }, { validator:validatePhoneNumber, trigger: 'blur' }], validateTrigger: 'change'}]"
+            v-decorator="['phoneNumber', {rules: [{ required: true, pattern: /^1[34578]\d{9}$/, message: $t('user.phone-number.required') }, { validator: validatePhoneNumber }]}]"
           >
             <a-icon slot="prefix"
                     type="mobile"/>
@@ -39,7 +39,7 @@
             :placeholder="$t('user.verification-code.required')"
             :style="{width: 'calc(100% - 100px)', paddingRight: '15px'}"
             class="captcha-input"
-            v-decorator="[ 'captchaCodeSms', {rules: [{ required: true, message: $t('user.verification-code.required') }], validateTrigger: 'change'}]">
+            v-decorator="[ 'captchaCodeSms', {rules: [{ required: true, message: $t('user.verification-code.required') }]}]">
             >
             <a-icon slot="prefix"
                     type="safety-certificate"/>
@@ -65,7 +65,7 @@
             :style="{width: 'calc(100% - 100px)', paddingRight: '15px'}"
             class="captcha-input"
             :max-length="6"
-            v-decorator="['captcha', {rules: [{ required: true, message: $t('user.verification-code.required') }, { validator:validSmsCode, trigger: 'blur' }], validateTrigger: 'blur'}]">
+            v-decorator="['captcha', {rules: [{ required: true, message: $t('user.verification-code.required') }, { validator: validSmsCode }]}]">
             >
             <a-icon slot="prefix"
                     type="mail"/>
@@ -113,6 +113,8 @@ export default {
           callback()
         }
       })
+      } else {
+          callback()
       }
     }
     var validSmsCode = (rule, value, callback) => {
@@ -129,6 +131,8 @@ export default {
             callback()
           }
         })
+      } else {
+          callback()
       }
     }
     return {

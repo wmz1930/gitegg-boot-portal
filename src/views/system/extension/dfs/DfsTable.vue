@@ -9,7 +9,7 @@
                 <a-select-option value="">
                   全部
                 </a-select-option>
-                <a-select-option v-for="item in dfsTypeList" :key="item.id" :label="item.dictName" :value="item.id">
+                <a-select-option v-for="item in dfsTypeList" :key="item.id" :label="item.dictName" :value="item.dictCode">
                   {{ item.dictName }}
                 </a-select-option>
               </a-select>
@@ -125,7 +125,7 @@
         :wrapper-col="dfsWrapperCol">
         <a-form-model-item label="存储分类" prop="dfsType">
           <a-select v-model="dfsForm.dfsType">
-            <a-select-option v-for="item in dfsTypeList" :key="item.id" placeholder="请选择分布式存储分类" :label="item.dictName" :value="item.id">
+            <a-select-option v-for="item in dfsTypeList" :key="item.id" placeholder="请选择分布式存储分类" :label="item.dictName" :value="item.dictCode">
               {{ item.dictName }}
             </a-select-option>
           </a-select>

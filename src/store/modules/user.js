@@ -92,21 +92,21 @@ const user = {
     // 手动点击退出登录，需要到后台把token和refreshToken加入黑名单，token从头信息中取，refreshToken从参数中取
     Logout ({ commit, state }) {
       return new Promise((resolve) => {
-        commit('SET_TOKEN', '')
-        commit('SET_REFRESH_TOKEN', '')
-        commit('SET_ROLES', [])
-        commit('SET_PERMISSIONS', [])
-        commit('SET_MENU_TREE', [])
-        commit('SET_INFO', [])
-        commit('SET_NAME', '')
-        commit('SET_AVATAR', '')
-        storage.remove(ACCESS_TOKEN)
-        storage.remove(REFRESH_ACCESS_TOKEN)
-        logout(serialize({ refreshToken: storage.get(REFRESH_ACCESS_TOKEN) })).then(() => {
+        logout({ refreshToken: storage.get(REFRESH_ACCESS_TOKEN) }).then(() => {
           resolve()
         }).catch(() => {
           resolve()
         }).finally(() => {
+          commit('SET_TOKEN', '')
+          commit('SET_REFRESH_TOKEN', '')
+          commit('SET_ROLES', [])
+          commit('SET_PERMISSIONS', [])
+          commit('SET_MENU_TREE', [])
+          commit('SET_INFO', [])
+          commit('SET_NAME', '')
+          commit('SET_AVATAR', '')
+          storage.remove(ACCESS_TOKEN)
+          storage.remove(REFRESH_ACCESS_TOKEN)
           resolve()
         })
       })
